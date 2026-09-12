@@ -1,0 +1,91 @@
+{
+  "_instructions": "本文件是行业接入四件套之一。域 ID 一经分配不复用。填完跑平台侧校验器自测。",
+  "profile_version": "domain/1.0",
+  "domain_id": "meddev",
+  "domain_name": "医疗器械 · 注册与备案路径（样板域）",
+  "operator": {
+    "org": "待认领 — 本域开放给具备资质的运营方",
+    "contact": "见 README 的「认领方式」",
+    "agent_card": "https://SynomosAI.github.io/.well-known/agent-card.json"
+  },
+  "attributes": [
+    {
+      "key": "meddev.device_class",
+      "type": "enum",
+      "values": [
+        "class_i",
+        "class_ii",
+        "class_iii",
+        "unclassified"
+      ],
+      "issuer_required": true,
+      "ttl_days": 365,
+      "assurance_min": "verified",
+      "visibility_default": "private"
+    },
+    {
+      "key": "meddev.reg_path",
+      "type": "enum",
+      "values": [
+        "filing",
+        "registration",
+        "innovative",
+        "emergency",
+        "exempt",
+        "undetermined"
+      ],
+      "issuer_required": true,
+      "ttl_days": 365,
+      "assurance_min": "verified",
+      "visibility_default": "private"
+    },
+    {
+      "key": "meddev.reg_status",
+      "type": "enum",
+      "values": [
+        "not_required",
+        "filed",
+        "approved",
+        "pending",
+        "expired",
+        "rejected"
+      ],
+      "issuer_required": true,
+      "ttl_days": 365,
+      "assurance_min": "verified",
+      "visibility_default": "private"
+    },
+    {
+      "key": "meddev.license_scope",
+      "type": "string",
+      "issuer_required": true,
+      "ttl_days": 365,
+      "assurance_min": "verified",
+      "visibility_default": "private"
+    },
+    {
+      "key": "meddev.udi_status",
+      "type": "enum",
+      "values": [
+        "assigned",
+        "pending",
+        "not_required",
+        "unknown"
+      ],
+      "issuer_required": false,
+      "ttl_days": 365,
+      "assurance_min": "verified",
+      "visibility_default": "private"
+    }
+  ],
+  "checker_endpoint": "mcp://pending-claim/meddev-checker",
+  "gate_map_ref": "./gate-map.json",
+  "privacy_ref": "./privacy.json",
+  "red_lines": [
+    "产品管理类别以药监部门分类界定结论为准，AI 不得自行判定类别",
+    "不得输出「可上市」「可销售」等放行类结论，以注册证与备案凭证为唯一依据",
+    "不得建议以拆分成套器械、变更预期用途、降低申报类别等方式规避注册"
+  ],
+  "valid_from": "2026-09-12",
+  "status": "RESERVED"
+}

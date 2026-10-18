@@ -1,0 +1,21 @@
+# meddev-reg-path-checker
+
+> 医疗器械 · 注册与备案路径域配置包：把产品分类与注册路径拆成可核验属性，AI 只做路径提示，不做分类与放行结论。
+
+`meddev-reg-path-checker` 是 SynomosAI 平台「行业接入四件套」的一个域骨架（样板域，RESERVED）。域 ID `meddev`，覆盖设备分类、注册路径、注册状态、许可范围、UDI 五个属性。核验器（MCP 工具）只出示与核验出处链，不下专业判定。
+
+## 核心
+
+- [README.md](https://github.com/SynomosAI/meddev-reg-path-checker/blob/main/README.md): 域说明、属性清单、红线、认领方式
+- [domain.manifest.json](https://github.com/SynomosAI/meddev-reg-path-checker/blob/main/domain.manifest.json): 本域声明
+- [gate-map.json](https://github.com/SynomosAI/meddev-reg-path-checker/blob/main/gate-map.json): 阻断规则
+- [privacy.json](https://github.com/SynomosAI/meddev-reg-path-checker/blob/main/privacy.json): 隐私声明
+- [checker.io.json](https://github.com/SynomosAI/meddev-reg-path-checker/blob/main/checker.io.json): MCP 核验器契约
+
+## 可选
+
+- [llms-full.txt](https://github.com/SynomosAI/meddev-reg-path-checker/blob/main/llms-full.txt): 完整文本
+- [AGENTS.md](https://github.com/SynomosAI/meddev-reg-path-checker/blob/main/AGENTS.md): Agent 工作指引
+- [SECURITY.md](https://github.com/SynomosAI/meddev-reg-path-checker/blob/main/SECURITY.md): 安全策略
+- [README.en.md](https://github.com/SynomosAI/meddev-reg-path-checker/blob/main/README.en.md): 英文版说明
+- [LICENSE](https://github.com/SynomosAI/meddev-reg-path-checker/blob/main/LICENSE): MIT License

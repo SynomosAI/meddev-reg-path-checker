@@ -1,0 +1,44 @@
+# meddev-reg-path-checker — 完整文本
+
+本文件为 llms.txt 标准的「完整版」。
+
+## 这是什么
+
+`meddev-reg-path-checker` 是 SynomosAI 平台「行业接入四件套」的一个域骨架，域 ID `meddev`（医疗器械 · 注册与备案路径，样板域），当前状态 RESERVED。
+
+一句话：把「这个产品属于哪一类、该走哪条路」拆成可核验的属性，AI 只做路径提示，不做分类与放行结论。
+
+## 五个属性
+
+- `meddev.device_class`：管理类别（class_i/class_ii/class_iii/unclassified）
+- `meddev.reg_path`：适用路径（filing/registration/innovative/emergency/exempt/undetermined）
+- `meddev.reg_status`：注册证或备案凭证状态（not_required/filed/approved/pending/expired/rejected）
+- `meddev.license_scope`：生产/经营许可范围
+- `meddev.udi_status`：UDI 赋码状态（assigned/pending/not_required/unknown）
+
+## 三条红线
+
+1. 产品管理类别以药监部门分类界定结论为准，AI 不得自行判定类别
+2. 不得输出「可上市」「可销售」等放行类结论
+3. 不得建议以拆分成套器械、变更预期用途、降低申报类别等方式规避注册
+
+## 快速开始
+
+```bash
+git clone https://github.com/SynomosAI/meddev-reg-path-checker.git
+cd meddev-reg-path-checker
+cat domain.manifest.json
+cat checker.io.json
+```
+
+## 触发词
+
+医疗器械分类 / 注册备案 / 一类备案 / 二三类注册 / UDI / 分类界定 / domain profile / MCP checker。
+
+## 许可与权利
+
+代码与配置按 MIT 许可使用（© 2026 SynomosAI）。文档的知识版权归 SynomosAI 所有。
+
+## 链接
+
+- 仓库: https://github.com/SynomosAI/meddev-reg-path-checker
